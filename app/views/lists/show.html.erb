@@ -1,0 +1,36 @@
+<div class="container">
+  <p style="font-size: 2rem;" class="d-flex justify-content-center m-3"><%= @list.name %></p>
+  <%= link_to "Back", lists_path, class:"btn btn-default"%>
+  <%= link_to "Add Bookmark", new_list_bookmark_path(@list), class:"btn btn-default"%>
+
+  <br>
+
+  <div class="card-grid">
+    <% @list.bookmarks.each do |bookmark| %>
+    <div class="card">
+        <%= image_tag bookmark.movie.poster_url %>
+      <div class="card-body">
+        <p class="card-title text-center" style="color: rgba(176, 0, 142, 1); font-size: 2rem;"><%= bookmark.movie.title %> </p>
+        <div class="text-center">
+          <%= bookmark.movie.overview %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <br>
+  <br>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

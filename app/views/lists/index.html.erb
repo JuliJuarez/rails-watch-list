@@ -1,0 +1,45 @@
+<!-- Banner -->
+<div class="banner">
+  <div class="container">
+    <p class="justify-content-center d-flex"><strong>Save any kind of movies</strong></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="m-3 text-center">
+    <p style="font-size: 3rem; color: rgba(176, 0, 142, 1);">My Lists</p>
+    <%= link_to "New list", new_list_path %>
+  <div>
+
+   <!-- Cards Lists -->
+  <div class="card-grid">
+    <% @lists.each do |list| %>
+    <div class="card">
+      <% if list.name == "Classic" %>
+             <%= image_tag "pochoclos.jpg", style: "height: 245px" %>
+            <% elsif list.name == "Drama" %>
+              <%= image_tag "drama.jpg", style: "height: 245px" %>
+            <% elsif list.name == "Comedy" %>
+              <%= image_tag "comedy.jpg", style: "height: 245px" %>
+            <% elsif list.name == "To rewatch" %>
+              <%= image_tag "volver.jpg", style: "height: 245px" %>
+            <% elsif list.name == "Anime" %>
+              <%= image_tag "anime.jpg", style: "height: 245px" %>
+            <% else %>
+              <%= image_tag "otro.jpg", style: "height: 245px" %>
+            <% end %>
+
+      <%# <%= image_tag "pochoclos.jpg" %>
+      <div class="card-body">
+        <p class="card-title text-center" style="color: rgba(176, 0, 142, 1); font-size: 2rem;"><%= list.name %></p>
+        <div class="text-center">
+          <%= link_to "Show", list_path(list) %>
+          <%= link_to "Edit", edit_list_path(list) %>
+          <%= link_to "Remove", list_path(list), method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
