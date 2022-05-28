@@ -8,19 +8,19 @@
   <div class="card-grid">
     <% @list.bookmarks.each do |bookmark| %>
     <div class="card">
-        <%= image_tag bookmark.movie.poster_url %>
+        <%= image_tag bookmark.movie.poster_url, style: "height: 245px" %>
       <div class="card-body">
         <p class="card-title text-center" style="color: rgba(176, 0, 142, 1); font-size: 2rem;"><%= bookmark.movie.title %> </p>
         <div class="text-center">
           <%= bookmark.movie.overview %>
+          <br>
+          <%= link_to "Remove", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
       </div>
     </div>
     <% end %>
   </div>
 
-  <br>
-  <br>
 
 
 

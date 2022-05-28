@@ -1,11 +1,12 @@
 <div class="container">
+<div class="d-flex justify-content-center" style="margin: 4rem;">
 <%= form_for [:list, @bookmark] do |f|%>
 
     <div class="form-group">
 
         <%= f.label :comment %>
         <br/>
-        <%= f.text_field :comment %>
+        <%= f.text_field :comment, class: "form-control"  %>
 
 
     </div>
@@ -21,4 +22,5 @@
     <%= link_to "Cancel" , lists_path, class:"btn btn-default"%>
 
 <%end%>
+</div>
 </div>

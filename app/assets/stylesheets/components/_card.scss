@@ -3,3 +3,12 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
+
+.form-control {
+  border: 2px solid #828282 !important;
+}
+
+.form-control:focus {
+  border: 2px solid #B5BD00 !important;
+  box-shadow: none !important;
+}

@@ -1,14 +1,16 @@
 <div class="container">
+  <div class="d-flex justify-content-center" style="margin: 4rem;">
   <%= form_for @list do |f|%>
 
       <div class="form-group">
 
           <%= f.label :name %>
           <br/>
-          <%= f.text_field :name %>
+          <%= f.text_field :name, class: "form-control"  %>
       </div>
 
       <%= f.submit "Submit" ,class:"btn btn-primary"%>
       <%= link_to "Cancel" , lists_path, class:"btn btn-default"%>
   <%end%>
+  </div>
 </div>
