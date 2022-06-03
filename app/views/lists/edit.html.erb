@@ -1,9 +1,10 @@
 <div class="container">
   <div class="d-flex justify-content-center" style="margin: 4rem;">
-  <%= form_for @list do |f|%>
+  <%= simple_form_for @list do |f|%>
 
       <div class="form-group">
-
+          <%= f.input :photo, as: :file %>
+          <br>
           <%= f.label :name %>
           <br/>
           <%= f.text_field :name, class: "form-control"  %>
